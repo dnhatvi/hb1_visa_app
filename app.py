@@ -29,7 +29,7 @@ st.markdown("""
 # Load Data
 @st.cache_data
 def load_data():
-    df = pd.read_excel("Employer Information.xlsx")
+    df = pd.read_parquet('employer_info.parquet')
     df.columns = df.columns.str.strip()
     # Data Preprocessing
     df = df.rename(columns={
